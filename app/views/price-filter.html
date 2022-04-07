@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Narrow down your search by price</h1>
+
+      <form class="form" action="/check-answers" method="post">
+
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "comparison-operator",
+          name: "comparison-operator",
+            label: {
+              text: "Select a comparison",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            items: [
+            {
+              value: "GREATER_THAN",
+              text: "Greater than"
+            },
+            {
+              value: "GREATER_THAN_OR_EQUAL_TO",
+              text: "Greater than or equal to"
+            },
+            {
+              value: "LESS_THAN",
+              text: "Less than"
+              
+            },
+            {
+              value: "LESSER_THAN_OR_EQUAL_TO",
+              text: "Lesser than or equal to"
+            },
+            {
+              value: "EQUAL_TO",
+              text: "Equal to"
+            }
+            ]
+          }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "choose-price",
+          name: "choose-price",
+          fieldset: {
+            legend: {
+              text: "Choose a price",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+          {
+            value: "500",
+            text: "500",
+            checked: checked("choose-price", "500")
+          },
+          {
+            value: "750",
+            text: "750",
+            checked: checked("choose-price", "750")
+          },
+          {
+            value: "1000",
+            text: "1000",
+            checked: checked("choose-price", "1000")
+          },
+          {
+            value: "1250",
+            text: "1250",
+            checked: checked("choose-price", "1250")
+          },
+          {
+            value: "1500",
+            text: "1500",
+            checked: checked("choose-price", "1500")
+          }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
