@@ -13,30 +13,35 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/all-filter-choice" method="post">
+      <form class="form" action="/sales-filter-options" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukRadios({
-          idPrefix: "all-filter",
-          name: "all-filter",
+          idPrefix: "sales-filters",
+          name: "sales-filters",
           fieldset: {
             legend: {
-              text: "Do you want to see all the adverts or narrow down your search?",
+              text: "How do you want to narrow down your search by?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "Show me all the adverts",
-              text: "Show me all adverts",
-              checked: checked("all-filter", "Show me all the adverts")
+              value: "Price",
+              text: "Price",
+              checked: checked("sales-filters", "Price")
             },
             {
-              value: "I want to narrow down my search",
-              text: "I want to narrow down my search",
-              checked: checked("all-filter", "I want to narrow down my search")
+              value: "number-of-bedrooms",
+              text: "Number of bedrooms",
+              checked: checked("sales-filters", "Number of bedrooms")
+            },
+            {
+              value: "number-of-bahtrooms",
+              text: "Number of bathrooms",
+              checked: checked("sales-filters", "Number of bathrooms")
             }
           ]
         }) }}

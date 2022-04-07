@@ -14,7 +14,7 @@ router.post('/create-search-answer', function (req, res) {
 
 })
 
-router.post('/filter-choices', function (req, res) {
+router.post('/advert-type-choice', function (req, res) {
 
   var chooseFilters = req.session.data['search-advert-type']
   
@@ -30,6 +30,24 @@ router.post('/filter-choices', function (req, res) {
 
 })
 
+router.post('/all-filter-choice', function (req, res) {
+
+  var choice = req.session.data['all-filter']
+  var advertType = req.session.data['search-advert-type']
+  
+  if (choice == "Show me all the adverts"){
+    res.redirect('/check-answers-all')
+  } else if (advertType == "Rentals") {
+      res.redirect('/rentals-filters')
+  }
+    else if (advertType == "Sales") {
+      res.redirect('/sales-filters')
+  }
+    else if (advertType == "Dating") {
+      res.redirect('/dating-filters')
+  }
+})
+
 router.post('/rentals-filter-options', function (req, res) {
 
   var filter = req.session.data['rentals-filters']
@@ -42,6 +60,9 @@ router.post('/rentals-filter-options', function (req, res) {
   } 
   else if (chooseFilters == "Number of bedrooms") {
     res.redirect('/number-of-bedrooms-filter')
+  }
+  else if (chooseFilters == "Number of bathrooms") {
+    res.redirect('/number-of-bathrooms-filter')
   }
 })
 
