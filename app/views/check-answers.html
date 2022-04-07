@@ -39,118 +39,64 @@
             {{ data['search-advert-type']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/search-advert-type.html">
               Change
-              <span class="govuk-visually-hidden"> date of birth</span>
+              <span class="govuk-visually-hidden"> advert type</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Contact information
+            Narrow down search by
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
+            {{ data['rentals-filters']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/rentals-filters.html">
               Change
-              <span class="govuk-visually-hidden"> contact information</span>
+              <span class="govuk-visually-hidden"> narrow down by</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Contact details
+            Comparison
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>07700 900457</p>
-            <p>sarah.phillips@example.com</p>
+            {{ data ['comparison-operator']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="/price-filter">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> comparison</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Price
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['choose-price']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/price-filter">
+              Change
+              <span class="govuk-visually-hidden"> price for comparison</span>
             </a>
           </dd>
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Application details</h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Previous application number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            502135326
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> previous application number</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Licence type
-          </dt>
-          <dd class="govuk-summary-list__value">
-            For personal use
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> licence type</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Home address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            72 Guild Street
-            <br>London
-            <br>SE23 6FH
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> home address</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Licence period
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Valid for 6 months
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> licence period</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
-
-      <h2 class="govuk-heading-m">Now send your application</h2>
-
-      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <h2 class="govuk-heading-m">Now submit your search and hold on tight</h2>
 
       <form action="/confirmation" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Accept and send
+          Search now
         </button>
 
       </form>
