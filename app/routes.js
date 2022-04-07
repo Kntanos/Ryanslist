@@ -9,7 +9,7 @@ router.post('/create-search-answer', function (req, res) {
   if (createOrSearch == "create"){
     res.redirect('/create-new')
   } else {
-    res.redirect('/search-new')
+    res.redirect('/search-city')
   }
 
 })
