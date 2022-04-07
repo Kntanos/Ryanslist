@@ -18,12 +18,15 @@ router.post('/filter-choices', function (req, res) {
 
   var chooseFilters = req.session.data['search-advert-type']
   
-  if (chooseFilters == "rentals"){
+  if (chooseFilters == "Rentals"){
     res.redirect('/rentals-filters')
   }
-  else if (chooseFilters == "sales") {
+  else if (chooseFilters == "Sales") {
     res.redirect('/sales-filters')
-  } else {res.redirect('/dating-filters')}
+  }
+  else if (chooseFilters == "Dating") {
+    res.redirect('/dating-filters')
+  }
 
 })
 
