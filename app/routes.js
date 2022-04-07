@@ -27,4 +27,17 @@ router.post('/filter-choices', function (req, res) {
 
 })
 
+router.post('/rentals-filter-options', function (req, res) {
+
+  var filter = req.session.data['rentals-filters']
+  
+  if (filter == "price"){
+    res.redirect('/price-filter')
+  }
+  else if (chooseFilters == "dates-available") {
+    res.redirect('/dates-available-filter')
+  } else {res.redirect('/number-of-bedrooms-filter')}
+
+})
+
 module.exports = router
