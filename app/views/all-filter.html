@@ -13,35 +13,30 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/all-filter" method="post">
+      <form class="form" action="/filter-choices" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "search-advert-type",
-          name: "search-advert-type",
+          idPrefix: "all-filter",
+          name: "all-filter",
           fieldset: {
             legend: {
-              text: "Which adverts you want to search for?",
+              text: "Do you want to see all the adverts or narrow down your search?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "rentals",
-              text: "Rentals",
-              checked: checked("advert-type", "Rentals")
+              value: "all",
+              text: "Show me all adverts",
+              checked: checked("all-filter", "Show me all the adverts")
             },
             {
-              value: "sales",
-              text: "Sales",
-              checked: checked("advert-type", "Sales")
-            },
-            {
-              value: "dating",
-              text: "Dating",
-              checked: checked("advert-type", "dating")
+              value: "narrow-down",
+              text: "I want to narrow down my search",
+              checked: checked("all-filter", "I want to narrow down my search")
             }
           ]
         }) }}

@@ -14,4 +14,17 @@ router.post('/create-search-answer', function (req, res) {
 
 })
 
+router.post('/filter-choices', function (req, res) {
+
+  var chooseFilters = req.session.data['search-advert-type']
+  
+  if (chooseFilters == "rentals"){
+    res.redirect('/rentals-filters')
+  }
+  else if (chooseFilters == "sales") {
+    res.redirect('/sales-filters')
+  } else {res.redirect('/dating-filters')}
+
+})
+
 module.exports = router
