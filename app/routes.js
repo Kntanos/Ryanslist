@@ -19,15 +19,17 @@ router.post('/advert-type-choice', function (req, res) {
   var chooseFilters = req.session.data['search-advert-type']
   
   if (chooseFilters == "Rentals"){
-    res.redirect('/rentals-filters')
+    res.redirect('/all-filter')
   }
   else if (chooseFilters == "Sales") {
-    res.redirect('/sales-filters')
+    res.redirect('/all-filter')
   }
   else if (chooseFilters == "Dating") {
-    res.redirect('/dating-filters')
+    res.redirect('/all-filter')
   }
-
+  else if (chooseFilters == "All") {
+    res.redirect('/check-answers-all')
+  }
 })
 
 router.post('/all-filter-choice', function (req, res) {
