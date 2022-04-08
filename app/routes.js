@@ -57,13 +57,13 @@ router.post('/rentals-filter-options', function (req, res) {
   if (filter == "Price"){
     res.redirect('/rentals-price-filter')
   }
-  else if (chooseFilters == "Dates available") {
-    res.redirect('/dates-available-filter')
+  else if (filter == "Dates available") {
+    res.redirect('/rentals-dates-filter')
   } 
-  else if (chooseFilters == "Number of bedrooms") {
+  else if (filter == "Number of bedrooms") {
     res.redirect('/number-of-bedrooms-filter')
   }
-  else if (chooseFilters == "Number of bathrooms") {
+  else if (filter == "Number of bathrooms") {
     res.redirect('/number-of-bathrooms-filter')
   }
 })
