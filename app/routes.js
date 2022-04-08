@@ -21,7 +21,7 @@ router.post('/advert-type-choice', function (req, res) {
   if (chooseFilters == "Rentals"){
     res.redirect('/all-filter')
   }
-  else if (chooseFilters == "Sales") {
+  else if (chooseFilters == "For sale") {
     res.redirect('/all-filter')
   }
   else if (chooseFilters == "Dating") {
@@ -42,8 +42,8 @@ router.post('/all-filter-choice', function (req, res) {
   } else if (advertType == "Rentals") {
       res.redirect('/rentals-filters')
   }
-    else if (advertType == "Sales") {
-      res.redirect('/sales-filters')
+    else if (advertType == "For sale") {
+      res.redirect('/sales-price-filter')
   }
     else if (advertType == "Dating") {
       res.redirect('/dating-filters')
@@ -55,7 +55,7 @@ router.post('/rentals-filter-options', function (req, res) {
   var filter = req.session.data['rentals-filters']
   
   if (filter == "Price"){
-    res.redirect('/price-filter')
+    res.redirect('/rentals-price-filter')
   }
   else if (chooseFilters == "Dates available") {
     res.redirect('/dates-available-filter')
