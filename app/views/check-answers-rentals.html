@@ -59,34 +59,51 @@
             </a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Comparison
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data ['comparison-operator']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/rentals-price-filter">
-              Change
-              <span class="govuk-visually-hidden"> comparison</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Price
-          </dt>
-          <dd class="govuk-summary-list__value">
-           {{ data['choose-price']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="/rentals-price-filter">
-              Change
-              <span class="govuk-visually-hidden"> price for comparison</span>
-            </a>
-          </dd>
-        </div>
+        {% if data['rentals-filters'] != "Dates available" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Comparison
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data ['comparison-operator']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/rentals-price-filter">
+                Change
+                <span class="govuk-visually-hidden"> comparison</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Price
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['choose-price']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/rentals-price-filter">
+                Change
+                <span class="govuk-visually-hidden"> price for comparison</span>
+              </a>
+            </dd>
+          </div>
+        {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              From
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['rentals-dates-filter']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/rentals-dates-filter">
+                Change
+                <span class="govuk-visually-hidden"> dates from</span>
+              </a>
+            </dd>
+          </div>
+        {% endif %}
       </dl>
 
       <h2 class="govuk-heading-m">Now submit your search and hold on tight</h2>
