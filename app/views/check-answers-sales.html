@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <h2 class="govuk-heading-m">Search for classifieds</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            City
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['city'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="search-city.html">
+              Change
+              <span class="govuk-visually-hidden"> city</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Classified type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['search-advert-type']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/search-advert-type.html">
+              Change
+              <span class="govuk-visually-hidden"> advert type</span>
+            </a>
+          </dd>
+        </div>
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Comparison
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data ['comparison-operator']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/price-filter">
+              Change
+              <span class="govuk-visually-hidden"> comparison</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Price
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['choose-price']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/price-filter">
+              Change
+              <span class="govuk-visually-hidden"> price for comparison</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Now submit your search and hold on tight</h2>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Search now
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
