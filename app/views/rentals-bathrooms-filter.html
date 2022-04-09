@@ -53,11 +53,11 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "number-of-bedrooms",
-          name: "number-of-bedrooms",
+          idPrefix: "number-of-bathrooms",
+          name: "number-of-bathrooms",
           fieldset: {
             legend: {
-              text: "Choose number of bedrooms",
+              text: "Choose number of bathrooms",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -66,22 +66,22 @@
           {
             value: "1",
             text: "1",
-            checked: checked("number-of-bedroomse", "1")
+            checked: checked("number-of-bathrooms", "1")
           },
           {
             value: "2",
             text: "2",
-            checked: checked("number-of-bedrooms", "2")
+            checked: checked("number-of-bathrooms", "2")
           },
           {
             value: "3",
             text: "3",
-            checked: checked("number-of-bedrooms, "3")
+            checked: checked("number-of-bathrooms", "3")
           },
           {
             value: "4",
             text: "4",
-            checked: checked("number-of-bedrooms", "4")
+            checked: checked("number-of-bathrooms", "4")
           }
           ]
         }) }}
