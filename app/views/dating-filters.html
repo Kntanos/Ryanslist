@@ -13,13 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/rentals-filter-options" method="post">
+      <form class="form" action="/dating-age-filter" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukRadios({
-          idPrefix: "rentals-filters",
-          name: "rentals-filters",
+          idPrefix: "dating-filters",
+          name: "dating-filters",
           fieldset: {
             legend: {
               text: "Choose how to narrow down your search by",
@@ -29,24 +29,14 @@
           },
           items: [
             {
-              value: "Price",
-              text: "Price",
-              checked: checked("rentals-filters", "Price")
+              value: "Age",
+              text: "Age",
+              checked: checked("dating-filters", "Age")
             },
             {
-              value: "Dates available",
-              text: "Dates available",
-              checked: checked("rentals-filters", "Dates available")
-            },
-            {
-              value: "Number of bedrooms",
-              text: "Number of bedrooms",
-              checked: checked("rentals-filters", "Number of bedrooms")
-            },
-            {
-              value: "Number of bathrooms",
-              text: "Number of bathrooms",
-              checked: checked("rentals-filters", "Number of bathrooms")
+              value: "Preferred age",
+              text: "Preferred age",
+              checked: checked("dating-filters", "Preferred age")
             }
           ]
         }) }}

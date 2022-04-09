@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/check-answers-dating" method="post">
+
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "comparison-operator",
+          name: "comparison-operator",
+            label: {
+              text: "Select a comparison",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            items: [
+            {
+              value: "Greater than",
+              text: "Greater than"
+            },
+            {
+              value: "Greater than or equal to",
+              text: "Greater than or equal to"
+            },
+            {
+              value: "Less than",
+              text: "Less than"
+              
+            },
+            {
+              value: "Lesser than or equal to",
+              text: "Lesser than or equal to"
+            },
+            {
+              value: "Equal to",
+              text: "Equal to"
+            }
+            ]
+          }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "choose-age",
+          name: "choose-age",
+          fieldset: {
+            legend: {
+              text: "Choose an age",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+          {
+            value: "20",
+            text: "20",
+            checked: checked("choose-age", "20")
+          },
+          {
+            value: "30",
+            text: "30",
+            checked: checked("choose-age", "30")
+          },
+          {
+            value: "40",
+            text: "40",
+            checked: checked("choose-age", "40")
+          },
+          {
+            value: "50",
+            text: "50",
+            checked: checked("choose-age", "50")
+          },
+          {
+            value: "60",
+            text: "60",
+            checked: checked("choose-age", "60")
+          }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
