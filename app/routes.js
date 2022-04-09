@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-// Add your routes here - above the module.exports line
+// SEARCH Routes ------------------------------------>
+
 router.post('/create-search-answer', function (req, res) {
 
   var createOrSearch = req.session.data['create-search']
@@ -65,6 +66,23 @@ router.post('/rentals-filter-options', function (req, res) {
   }
   else if (filter == "Number of bathrooms") {
     res.redirect('/rentals-bathrooms-filter')
+  }
+})
+
+// CREATE Routes ------------------------------------>
+
+router.post('/create-type-choice', function (req, res) {
+
+  var advertType = req.session.data['create-advert-type']
+  
+  if (advertType == "Rentals"){
+    res.redirect('/create-rentals')
+  }
+  else if (advertType == "For sale") {
+    res.redirect('/create-for-sale')
+  }
+  else if (advertType == "Dating") {
+    res.redirect('/create-dating')
   }
 })
 
