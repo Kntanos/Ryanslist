@@ -73,7 +73,7 @@
             </a>
           </dd>
         </div>
-        {% if data['rentals-filters'] != "Dates available" %}
+        {% if data['rentals-filters'] == "Price" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Comparison
@@ -102,7 +102,7 @@
               </a>
             </dd>
           </div>
-        {% else %}
+        {% elif data['rentals-filters'] == "Dates available" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               From
@@ -114,6 +114,64 @@
               <a href="/rentals-dates-filter">
                 Change
                 <span class="govuk-visually-hidden"> dates from</span>
+              </a>
+            </dd>
+          </div>
+        {% elif data['rentals-filters'] == "Number of bedrooms" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Comparison
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data ['comparison-operator']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/rentals-price-filter">
+                Change
+                <span class="govuk-visually-hidden"> comparison</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of bedrooms
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['number-of-bedrooms']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/rentals-price-filter">
+                Change
+                <span class="govuk-visually-hidden"> number of bedrooms</span>
+              </a>
+            </dd>
+          </div>
+        {% elif data['rentals-filters'] == "Number of bathrooms" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Comparison
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data ['comparison-operator']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/rentals-price-filter">
+                Change
+                <span class="govuk-visually-hidden"> comparison</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of bathrooms
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {{ data['number-of-bedrooms']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/rentals-price-filter">
+                Change
+                <span class="govuk-visually-hidden"> number of bathrooms</span>
               </a>
             </dd>
           </div>

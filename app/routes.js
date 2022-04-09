@@ -61,10 +61,10 @@ router.post('/rentals-filter-options', function (req, res) {
     res.redirect('/rentals-dates-filter')
   } 
   else if (filter == "Number of bedrooms") {
-    res.redirect('/number-of-bedrooms-filter')
+    res.redirect('/rentals-bedrooms-filter')
   }
   else if (filter == "Number of bathrooms") {
-    res.redirect('/number-of-bathrooms-filter')
+    res.redirect('/rentals-bathrooms-filter')
   }
 })
 
