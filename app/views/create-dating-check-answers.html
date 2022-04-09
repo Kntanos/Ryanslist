@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before posting your ad</h1>
+
+      <h2 class="govuk-heading-m">Dating</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            City
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['city']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="create-city">
+              Change
+              <span class="govuk-visually-hidden"> city</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['title']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="create-dating">
+              Change
+              <span class="govuk-visually-hidden"> title</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['description']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="create-dating">
+              Change
+              <span class="govuk-visually-hidden"> description</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your age
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['age']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="create-dating">
+              Change
+              <span class="govuk-visually-hidden"> your age</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your preferred age
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['preferredAge']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="create-dating">
+              Change
+              <span class="govuk-visually-hidden"> preferred age</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Review and post your ad</h2>
+
+      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and post classified
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
