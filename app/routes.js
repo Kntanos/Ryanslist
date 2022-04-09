@@ -79,7 +79,7 @@ router.post('/create-type-choice', function (req, res) {
     res.redirect('/create-rentals')
   }
   else if (advertType == "For sale") {
-    res.redirect('/create-for-sale')
+    res.redirect('/create-sales')
   }
   else if (advertType == "Dating") {
     res.redirect('/create-dating')

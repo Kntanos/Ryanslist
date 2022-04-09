@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="create-rentals-check-answers" method="post">
+      <form class="form" action="create-sales-check-answers" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -21,7 +21,7 @@
           id: "price",
           name: "price",
           label: {
-            text: "What is the rent per calendar month, in pounds?",
+            text: "What is the price per item, in pounds?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
@@ -29,7 +29,7 @@
             text: "£"
           },
           suffix: {
-            text: "per calendar month"
+            text: "per item"
           },
           classes: "govuk-input--width-5",
           spellcheck: false
