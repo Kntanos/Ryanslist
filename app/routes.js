@@ -6,8 +6,8 @@ router.post('/create-search-answer', function (req, res) {
 
   var createOrSearch = req.session.data['create-search']
   
-  if (createOrSearch == "create"){
-    res.redirect('/create-new')
+  if (createOrSearch == "Create"){
+    res.redirect('/create-city')
   } else {
     res.redirect('/search-city')
   }
