@@ -1,7 +1,22 @@
 const express = require('express')
 const router = express.Router()
+var request = require('then-request');
 
 // SEARCH Routes ------------------------------------>
+
+router.get('/search-results', function (req, res) {
+  console.log("Got in here")
+  
+  request('GET', 'http://localhost:9000/adverts')
+    .getBody('utf8') // Parse to text
+    .then(text => JSON.parse(text)) // Parse to JSON
+    .then(adJson => {
+      console.log("Reached here")
+      console.log({ad: adJson})
+      res.render('random', { ad: adJson })
+    })
+    console.log("Got out here")
+})
 
 router.post('/create-search-answer', function (req, res) {
 
