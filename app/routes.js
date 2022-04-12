@@ -13,7 +13,7 @@ router.get('/search-results', function (req, res) {
     .then(adJson => {
       console.log("Reached here")
       console.log({ad: adJson})
-      res.render('random', { ad: adJson })
+      res.render('search-results', { ad: adJson })
     })
     console.log("Got out here")
 })
